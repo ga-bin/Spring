@@ -9,7 +9,7 @@
 	<!-- spring 시큐리티가 경로 이동할때마다 자격있는지 체크하는 것이 필터 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+		<param-value>/WEB-INF/spring/*-context.xml</param-value>
 	</context-param>
 
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
