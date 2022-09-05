@@ -18,7 +18,7 @@ public interface EmpMapper {
 	// mapper에서 empId라고 매개변수명을 사용가능 자동으로 employeeId로 마이바티스가 번역함
 	
 	// 수정 : 사원정보를 넘겨받아서 이름과 성, 이메일을 수정할 수 있는 메소드 만들기
-	public int updateNameEmail(EmpVO empVO);
+	public int updateEmp(EmpVO empVO);
 	
 	// 삭제
 	public int deleteEmp(int employeeId);

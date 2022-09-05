@@ -68,7 +68,7 @@ public class EmpTest {
 		System.out.println("이메일입력");
 		info.setEmail(sc.nextLine());
 		
-		empMapper.updateNameEmail(info);
+		empMapper.updateEmp(info);
 		EmpVO newInfo = empMapper.getEmp(info);
 		System.out.println(newInfo.toString());
 		
