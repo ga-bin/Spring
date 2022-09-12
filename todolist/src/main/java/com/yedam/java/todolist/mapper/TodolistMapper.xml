@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yedam.java.todolist.mapper.TodolistMapper">
+	<!-- 전체조회 -->
+	<select id="getTodoList" resultType="TodoVO">
+		select no, id, contents, todoyn
+		from todo
+		order by no
+	</select>
+	
+	<!-- 추가 -->
+	<insert id="insertTodo" parameterType="TodoVO">
+		insert into todo (no, id, contents, todoyn) values (#{no}, #{id}, #{contents}, #{todoyn})
+	</insert>
+	
+	<!-- 추가시 no 값 가저오기 -->
+	<select id="insertNo" resultType="integer">
+		select nvl(max(no), 1) + 1 from todo 
+	</select>
+	<!-- 삭제 -->
+	<delete id="deleteTodo" parameterType="integer">
+		delete from todo where no = #{no}
+	</delete>
+	
+	<!-- 수정 -->
+	<update id="updateTodo" parameterType="TodoVO">
+		update todo set todoyn = '#{todoyn}' where no = #{no}	
+	</update>
+	
+</mapper>
