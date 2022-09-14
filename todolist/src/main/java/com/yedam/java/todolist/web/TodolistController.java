@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.yedam.java.todolist.service.TodoVO;
@@ -28,7 +29,7 @@ public class TodolistController {
 	
 	
 	@PostMapping("/todoList")
-	public int insertTodo(TodoVO todoVO){
+	public int insertTodo(@RequestBody TodoVO todoVO){
 		todoVO.setNo(service.insertNo());
 		return service.insertTodo(todoVO);
 	}
@@ -39,7 +40,7 @@ public class TodolistController {
 	}
 	
 	@PutMapping("/todoList")
-	public int updateTodo(TodoVO todoVO) {
+	public int updateTodo(@RequestBody TodoVO todoVO) {
 		return service.updateTodo(todoVO);
 	}
 }

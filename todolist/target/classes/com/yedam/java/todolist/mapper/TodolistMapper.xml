@@ -5,12 +5,13 @@
 	<select id="getTodoList" resultType="TodoVO">
 		select no, id, contents, todoyn
 		from todo
+		where id = 0
 		order by no
 	</select>
 	
 	<!-- 추가 -->
 	<insert id="insertTodo" parameterType="TodoVO">
-		insert into todo (no, id, contents, todoyn) values (#{no}, #{id}, #{contents}, #{todoyn})
+		insert into todo (no, id, contents, todoyn) values (#{no}, 0, #{contents}, #{todoyn})
 	</insert>
 	
 	<!-- 추가시 no 값 가저오기 -->
@@ -21,10 +22,9 @@
 	<delete id="deleteTodo" parameterType="integer">
 		delete from todo where no = #{no}
 	</delete>
-	
 	<!-- 수정 -->
 	<update id="updateTodo" parameterType="TodoVO">
-		update todo set todoyn = '#{todoyn}' where no = #{no}	
+		update todo set todoyn = #{todoyn} where no = #{no}	
 	</update>
 	
 </mapper>
