@@ -14,6 +14,7 @@
 			<th>도서이름</th>
 			<th>출판사</th>
 			<th>도서가격</th>
+			<th>사진</th>
 		</tr>
 		<c:forEach var="list" items="${list}">
 			<tr>
@@ -21,6 +22,8 @@
 				<td>${list.bookName }</td>
 				<td${list.bookPublisher }></td>
 				<td>${list.bookPrice }</td>
+				<td>${list.bookCoverImg }</td>
+				<td><img src="resources/images/${list.bookCoverImg }" width="50"></td>
 			</tr>
 		</c:forEach>
 	</table>

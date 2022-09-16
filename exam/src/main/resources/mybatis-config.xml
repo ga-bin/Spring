@@ -13,6 +13,6 @@
 	</typeAliases>
 	<typeHandlers>
 		<typeHandler javaType="java.sql.Date" 
-		handler="org.apache.ibatis.type.DateTypeHandler" />
+	  	handler="org.apache.ibatis.type.DateTypeHandler" />
 	</typeHandlers>
 </configuration>
